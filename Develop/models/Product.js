@@ -28,6 +28,14 @@ Product.init(
       },
       stock: {
         type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 10,
+        validate: {
+        isNumeric: true
+        }
+      },
+      category_id: {
+        type: DataTypes.INTEGER,
         //create the relationship in other file
         references: {
           model: 'category',
